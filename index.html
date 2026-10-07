@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The 70th Academy Awards — 1998</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #080707;
+            color: #eee5cf;
+            font-family: "Libre Baskerville", Georgia, serif;
+        }
+        /* =========================
+   SIMBOLO DEL CIRCOLO
+========================= */
+
+.deathly-hallows {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deathly-hallows svg {
+    width: 120px;
+    height: 120px;
+    display: block;
+}
+
+.deathly-hallows polygon,
+.deathly-hallows circle,
+.deathly-hallows line {
+    fill: none;
+    stroke: #a98739;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.cult-symbol {
+    transform: scale(1.15);
+    margin-bottom: 35px;
+}
+
+        /* =========================
+           HOMEPAGE
+        ========================== */
+
+        #home {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 50% 20%, rgba(155, 117, 42, .20), transparent 35%),
+                linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.85)),
+                #090807;
+        }
+
+        header {
+            border-bottom: 1px solid #80652b;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,.8);
+        }
+
+        .academy {
+            font-family: Cinzel, serif;
+            color: #d6b65b;
+            letter-spacing: 3px;
+            font-size: 14px;
+        }
+
+        nav a {
+            color: #c8b88d;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav a:hover {
+            color: #e5c96c;
+        }
+
+        .hero {
+            min-height: 78vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .small-title {
+            font-family: Cinzel, serif;
+            font-size: 15px;
+            letter-spacing: 7px;
+            color: #c5a34e;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-family: Cinzel, serif;
+            font-weight: 500;
+            font-size: clamp(42px, 8vw, 90px);
+            letter-spacing: 5px;
+            line-height: 1.05;
+            color: #e4c86a;
+            text-shadow: 0 3px 20px rgba(0,0,0,.8);
+        }
+
+        .year {
+            font-family: Cinzel, serif;
+            font-size: 25px;
+            letter-spacing: 12px;
+            margin-top: 15px;
+            color: #eee5cf;
+        }
+
+        .divider {
+            width: 180px;
+            height: 1px;
+            background: #a98434;
+            margin: 35px auto;
+        }
+
+        .description {
+            max-width: 650px;
+            line-height: 1.8;
+            color: #b9af98;
+            font-size: 14px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gold-button {
+            border: 1px solid #a98739;
+            color: #e1c45f;
+            background: transparent;
+            padding: 14px 25px;
+            cursor: pointer;
+            font-family: Cinzel, serif;
+            letter-spacing: 2px;
+            font-size: 11px;
+            transition: .3s;
+        }
+
+        .gold-button:hover {
+            background: #a98739;
+            color: #080707;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #332b1d;
+            color: #756c59;
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        /* =========================
+           LOGIN
+        ========================== */
+
+        #loginPage,
+        #cultPage {
+            display: none;
+            min-height: 100vh;
+        }
+
+        #loginPage {
+            background:
+                radial-gradient(circle at center, #241f15 0%, #090807 60%);
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .login-box {
+            width: min(440px, 100%);
+            border: 1px solid #70592b;
+            padding: 45px;
+            background: rgba(8,7,5,.94);
+            box-shadow: 0 0 50px rgba(0,0,0,.8);
+            text-align: center;
+        }
+
+        .login-box h2 {
+            font-family: Cinzel, serif;
+            color: #d5b85e;
+            letter-spacing: 4px;
+            font-size: 24px;
+        }
+
+        .login-box p {
+            color: #847b68;
+            font-size: 11px;
+            line-height: 1.7;
+            margin: 20px 0 30px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            background: #100f0c;
+            border: 1px solid #403722;
+            color: #e7d9b0;
+            outline: none;
+            font-family: Georgia, serif;
+        }
+
+        input:focus {
+            border-color: #a98739;
+        }
+
+        .error {
+            color: #b84b4b;
+            font-size: 11px;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .back {
+            display: block;
+            margin-top: 25px;
+            color: #6f6756;
+            cursor: pointer;
+            font-size: 10px;
+            text-decoration: underline;
+        }
+
+        /* =========================
+           CULT PAGE
+        ========================== */
+
+        #cultPage {
+            background:
+                radial-gradient(circle at 50% 20%, rgba(100,20,20,.16), transparent 30%),
+                #080606;
+            padding-bottom: 80px;
+        }
+
+        .cult-header {
+            padding: 45px 20px;
+            text-align: center;
+            border-bottom: 1px solid #321616;
+        }
+
+        .cult-header h2 {
+            font-family: Cinzel, serif;
+            color: #9e2828;
+            letter-spacing: 7px;
+            font-size: clamp(25px, 5vw, 45px);
+        }
+
+        .cult-header p {
+            margin-top: 15px;
+            color: #665656;
+            font-size: 11px;
+            letter-spacing: 3px;
+        }
+
+        .cult-content {
+            width: min(900px, 90%);
+            margin: 50px auto;
+        }
+
+        .warning {
+            border: 1px solid #602020;
+            padding: 20px;
+            text-align: center;
+            color: #a34a4a;
+            font-size: 11px;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        .cult-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .cult-card {
+            border: 1px solid #291515;
+            background: #0d0909;
+            padding: 30px;
+        }
+
+        .cult-card h3 {
+            color: #9b3030;
+            font-family: Cinzel, serif;
+            letter-spacing: 2px;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .cult-card p {
+            color: #81736c;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .document {
+            margin-top: 40px;
+            padding: 35px;
+            background: #100b0b;
+            border: 1px dashed #542020;
+        }
+
+        .document h3 {
+            color: #b23a3a;
+            font-family: Cinzel, serif;
+            margin-bottom: 20px;
+        }
+
+        .document p {
+            color: #9a8980;
+            line-height: 2;
+            font-size: 13px;
+        }
+
+        .secret {
+            margin-top: 25px;
+            padding: 20px;
+            border-left: 2px solid #8d2424;
+            color: #b4a299;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .logout {
+            display: block;
+            width: fit-content;
+            margin: 50px auto 0;
+            background: transparent;
+            border: 1px solid #442020;
+            color: #815050;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-family: Cinzel, serif;
+            letter-spacing: 2px;
+        }
+
+        .logout:hover {
+            background: #301313;
+        }
+
+        /* piccolo effetto "film" */
+
+        .film-grain {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: .035;
+            z-index: 100;
+            background-image:
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    #fff 3px
+                );
+        }
+
+        @media(max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 9px;
+            }
+
+            .login-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="film-grain"></div>
+
+<!-- =====================================
+     HOMEPAGE
+====================================== -->
+
+<section id="home">
+
+    <header>
+        <div class="academy">
+            THE ACADEMY OF MOTION PICTURE ARTS
+        </div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Nominees</a>
+            <a href="#">Winners</a>
+            <a href="#">Ceremony</a>
+        </nav>
+    </header>
+
+    <main class="hero">
+
+        <div class="small-title">
+            THE 70TH ANNUAL
+        </div>
+
+        <h1>ACADEMY<br>AWARDS</h1>
+
+        <div class="year">
+            1998
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="description">
+            Welcome to the official archive of the 70th Academy Awards.
+            Explore the nominees, the ceremony and the unforgettable
+            moments of Hollywood's most celebrated evening.
+        </p>
+
+        <div class="buttons">
+
+            <button class="gold-button"
+                    onclick="showLogin()">
+                CONFIDENTIAL ACCESS
+            </button>
+
+            <button class="gold-button"
+                    onclick="fakeSection('NOMINEES')">
+                VIEW NOMINEES
+            </button>
+
+        </div>
+
+    </main>
+
+    <footer>
+        © 1998 ACADEMY OF MOTION PICTURE ARTS AND SCIENCES
+        · ALL RIGHTS RESERVED
+    </footer>
+
+</section>
+
+
+<!-- =====================================
+     LOGIN
+====================================== -->
+
+<section id="loginPage">
+
+<div class="login-box">
+
+<div class="deathly-hallows">
+    <svg viewBox="0 0 120 120" aria-hidden="true">
+        <polygon points="60,8 108,108 12,108"></polygon>
+        <circle cx="60" cy="67" r="32"></circle>
+        <line x1="60" y1="8" x2="60" y2="108"></line>
+    </svg>
+</div>
+    <h2>RESTRICTED ACCESS</h2>
+        <p>
+            This section is reserved for authorized members
+            of the Academy and selected guests.
+            Please enter your credentials.
+        </p>
+
+        <form onsubmit="login(event)">
+
+            <input
+                type="email"
+                id="email"
+                placeholder="E-mail address"
+                required
+
+
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+            >
+
+            <button class="gold-button" type="submit">
+                ENTER
+            </button>
+
+        </form>
+
+        <div id="error" class="error">
+            ACCESS DENIED — INVALID CREDENTIALS
+        </div>
+
+        <span class="back" onclick="showHome()">
+            ← Return to Academy Awards
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     CULT PAGE
+====================================== -->
+
+<section id="cultPage">
+
+<div class="cult-header">
+
+<div class="deathly-hallows cult-symbol">
+    <svg viewBox="0 0 120 120" aria-hidden="true">
+        <polygon points="60,8 108,108 12,108"></polygon>
+        <circle cx="60" cy="67" r="32"></circle>
+        <line x1="60" y1="8" x2="60" y2="108"></line>
+    </svg>
+</div>
+    <h2>IL CIRCOLO DORATO</h2>
+
+    <p>
+        HAI APPENA VARCATO LA SOGLIA
+    </p>
+
+</div>        
+    <div class="cult-content">
+
+        <div class="warning">
+            DOCUMENTI RISERVATI — SOLO MEMBRI
+        </div>
+
+        <div class="cult-grid">
+
+            <div class="cult-card">
+                <h3> L'ORDINE </h3>
+
+                <p>
+                    Non siamo spettatori.
+                    Siamo noi che rimaniamo quando
+                    le luci si spengono e gli applausi cessano.
+                </p>
+            </div>
+
+            <div class="cult-card">
+                <h3> LA CERIMONIA </h3>
+
+                <p>
+                Ogni anno, sotto il glamour di Hollywood, 
+                gli eletti si riuniscono in silenzio. 
+                Possono entrare solo i prescelti.
+                </p>
+            </div>
+
+            <div class="cult-card">
+                <h3>I VOTI</h3>
+
+                <p>
+                    I nomi non verrano mai pronunciati. 
+                    I segreti non verrano mai scritti. 
+                    E coloro che tradiscono il Circolo non avranno modo di raccontarlo.
+
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="document">
+
+            <h3> DOCUMENTO 07 — CERIMONIA </h3>
+
+            <p>
+                Los Angeles, 23 marzo, 1995.
+            </p>
+
+            <br>
+
+            <p>
+            La cerimonia si svolgerà come previsto.
+            Non sono consentite modifiche al programma.
+            Edoardo garantirà che tutti i trasferimenti in sospeso vengano completati prima della cerimonia.
+            L’Asia rimarrà responsabile delle relazioni esterne e della protezione dei membri.          
+        </p>
+
+            <div class="secret">
+                "Il vincitore è stato scelto in anticipo, 
+                non preoccupatevi membri, prima o poi toccherà anche a voi."
+            </div>
+
+        </div>
+
+
+        <div class="document">
+
+            <h3>LE CINQUE REGOLE</h3>
+
+            <p>
+                I. Non parlare mai del circolo.<br>
+                II. Non rivelare mai l'esito della serata.<br>
+                III. Ogni membro dovrà partecipare alle riunioni
+                IV. Nessun nome dovrà essere fatto al di fuori
+                V. Non potete uscire.
+                <br>
+            </p>
+
+        </div>
+
+
+        <button class="logout" onclick="logout()">
+            LOG OUT
+        </button>
+
+    </div>
+
+</section>
+
+
+<script>
+
+    /*
+     * ==========================================
+     * CREDENZIALI DEL GIOCO
+     * ==========================================
+     *
+     * Cambia questi due valori per impostare
+     * le credenziali che vuoi usare.
+     */
+
+    const GAME_EMAIL = "arthurcorleone@gmail.com";
+    const GAME_PASSWORD = "arthurcorleone1952";
+
+
+    function hideAll() {
+        document.getElementById("home").style.display = "none";
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("cultPage").style.display = "none";
+    }
+
+
+    function showHome() {
+        hideAll();
+
+        document.getElementById("home").style.display = "block";
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+
+    function showLogin() {
+        hideAll();
+
+        document.getElementById("loginPage").style.display = "flex";
+
+        document.getElementById("error").style.display = "none";
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+
+    function login(event) {
+
+        event.preventDefault();
+
+        const email =
+            document.getElementById("email").value.trim();
+
+        const password =
+            document.getElementById("password").value;
+
+        const error =
+            document.getElementById("error");
+
+
+        if (
+            email === GAME_EMAIL &&
+            password === GAME_PASSWORD
+        ) {
+
+            error.style.display = "none";
+
+            document.getElementById("loginPage").style.display = "none";
+
+            document.getElementById("cultPage").style.display = "block";
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        } else {
+
+            error.style.display = "block";
+
+        }
+    }
+
+
+    function logout() {
+
+        document.getElementById("email").value = "";
+        document.getElementById("password").value = "";
+
+        showHome();
+    }
+
+
+    function fakeSection(name) {
+
+        alert(
+            name +
+            "\n\nThis section is currently unavailable in the archive."
+        );
+
+    }
+
+</script>
+
+</body>
+</html>
